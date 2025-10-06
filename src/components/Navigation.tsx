@@ -18,14 +18,16 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
   ];
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+    <nav className="sticky top-0 z-50 bg-white shadow-md">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
           <div className="flex items-center cursor-pointer" onClick={() => onNavigate('home')}>
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-500 via-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">ACL</span>
-              </div>
+              <img
+                src="https://ik.imagekit.io/eeyzqy1tn/ACL%20Projects/Logo%20&%20Branding/logo.png?updatedAt=1759706592622"
+                alt="ACL Projects Logo"
+                className="object-contain w-12 h-12 rounded-full"
+              />
               <div>
                 <h1 className="text-2xl font-bold text-gray-800">ACL Projects</h1>
                 <p className="text-xs text-gray-600">Pty Ltd</p>
@@ -33,7 +35,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
             </div>
           </div>
 
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden space-x-8 md:flex">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -52,7 +54,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100"
+            className="p-2 text-gray-700 rounded-md md:hidden hover:text-blue-600 hover:bg-gray-100"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -60,7 +62,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-white border-t">
+        <div className="bg-white border-t md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
               <button

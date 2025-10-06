@@ -7,8 +7,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-green-500 via-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold">ACL</span>
+              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg">
+                <img
+                  src="https://ik.imagekit.io/eeyzqy1tn/ACL%20Projects/Logo%20&%20Branding/logo.png?updatedAt=1759706592622"
+                  alt="ACL Projects Logo"
+                  className="object-contain w-12 h-12 rounded-full"
+                />
               </div>
               <div>
                 <h3 className="text-xl font-bold">ACL Projects</h3>

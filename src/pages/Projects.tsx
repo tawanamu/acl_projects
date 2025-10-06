@@ -96,16 +96,16 @@ export default function Projects() {
 
   return (
     <div className="bg-white">
-      <section className="relative bg-gradient-to-br from-green-600 via-blue-600 to-purple-600 text-white py-20 overflow-hidden">
+      <section className="relative py-20 overflow-hidden text-white bg-gradient-to-br from-green-600 via-blue-600 to-purple-600">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
-          style={{ backgroundImage: 'url("https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=1920")' }}
+          className="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-80"
+          style={{ backgroundImage: 'url("https://ik.imagekit.io/eeyzqy1tn/ACL%20Projects/Images/ehmitrich-fW6lwDM26o0-unsplash.jpg?updatedAt=1759711298389")' }}
         ></div>
         <div className="absolute inset-0 bg-gradient-to-br from-green-600/50 via-blue-600/50 to-purple-600/50"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Projects</h1>
-            <p className="text-xl text-green-100 max-w-3xl mx-auto">
+            <h1 className="mb-6 text-4xl font-bold md:text-5xl">Our Projects</h1>
+            <p className="max-w-3xl mx-auto text-xl text-green-100">
               Delivering excellence across electrical engineering, power electronics, and industrial automation projects
             </p>
           </div>
@@ -113,10 +113,10 @@ export default function Projects() {
       </section>
 
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Featured Projects</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-gray-800 md:text-4xl">Featured Projects</h2>
+            <p className="max-w-3xl mx-auto text-xl text-gray-600">
               A showcase of our recent work across various sectors and industries
             </p>
           </div>
@@ -125,23 +125,23 @@ export default function Projects() {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow"
+                className="overflow-hidden transition-shadow bg-white shadow-xl rounded-2xl hover:shadow-2xl"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2">
-                  <div className="relative h-64 lg:h-auto overflow-hidden">
+                  <div className="relative h-64 overflow-hidden lg:h-auto">
                     <div
-                      className="absolute inset-0 bg-cover bg-center transform hover:scale-105 transition-transform duration-500"
+                      className="absolute inset-0 transition-transform duration-500 transform bg-center bg-cover hover:scale-105"
                       style={{ backgroundImage: `url("${project.image}")` }}
                     ></div>
                     <div className="absolute top-4 left-4">
-                      <span className="bg-white text-gray-800 px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                      <span className="px-4 py-2 text-sm font-semibold text-gray-800 bg-white rounded-full shadow-lg">
                         {project.category}
                       </span>
                     </div>
                   </div>
 
                   <div className="p-8">
-                    <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">{project.title}</h3>
+                    <h3 className="mb-4 text-2xl font-bold text-gray-800 md:text-3xl">{project.title}</h3>
 
                     <div className="flex flex-wrap gap-4 mb-4 text-gray-600">
                       <div className="flex items-center gap-2">
@@ -158,10 +158,10 @@ export default function Projects() {
                       </div>
                     </div>
 
-                    <p className="text-gray-700 mb-6 leading-relaxed">{project.description}</p>
+                    <p className="mb-6 leading-relaxed text-gray-700">{project.description}</p>
 
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-800 mb-3">Project Highlights</h4>
+                      <h4 className="mb-3 text-lg font-semibold text-gray-800">Project Highlights</h4>
                       <div className="space-y-2">
                         {project.highlights.map((highlight, hIndex) => (
                           <div key={hIndex} className="flex items-start gap-2">
@@ -179,24 +179,24 @@ export default function Projects() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-green-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 text-white bg-gradient-to-r from-blue-600 to-green-600">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Commitment to Excellence</h2>
-            <p className="text-xl text-blue-100 max-w-4xl mx-auto mb-8">
+            <h2 className="mb-6 text-3xl font-bold md:text-4xl">Our Commitment to Excellence</h2>
+            <p className="max-w-4xl mx-auto mb-8 text-xl text-blue-100">
               Every project we undertake reflects our dedication to quality, safety, and client satisfaction. With our experienced team and comprehensive approach, we deliver results that exceed expectations.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                <h3 className="text-2xl font-bold mb-2">Quality First</h3>
+            <div className="grid grid-cols-1 gap-8 mt-12 md:grid-cols-3">
+              <div className="p-6 bg-white/10 backdrop-blur-sm rounded-xl">
+                <h3 className="mb-2 text-2xl font-bold">Quality First</h3>
                 <p className="text-blue-100">Highest standards in every aspect of our work</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                <h3 className="text-2xl font-bold mb-2">On Time, On Budget</h3>
+              <div className="p-6 bg-white/10 backdrop-blur-sm rounded-xl">
+                <h3 className="mb-2 text-2xl font-bold">On Time, On Budget</h3>
                 <p className="text-blue-100">Reliable delivery that respects your timeline and budget</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                <h3 className="text-2xl font-bold mb-2">Safety Excellence</h3>
+              <div className="p-6 bg-white/10 backdrop-blur-sm rounded-xl">
+                <h3 className="mb-2 text-2xl font-bold">Safety Excellence</h3>
                 <p className="text-blue-100">Zero-incident safety record across all projects</p>
               </div>
             </div>
@@ -210,11 +210,11 @@ export default function Projects() {
       </section>
 
       <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+        <div className="max-w-4xl px-4 mx-auto text-center sm:px-6 lg:px-8">
+          <h2 className="mb-6 text-3xl font-bold text-gray-800 md:text-4xl">
             Ready to Start Your Project?
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="mb-8 text-xl text-gray-600">
             Let's discuss how we can bring your electrical engineering and instrumentation project to life with the same excellence and dedication.
           </p>
         </div>
