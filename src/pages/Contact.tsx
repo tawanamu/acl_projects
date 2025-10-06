@@ -199,7 +199,7 @@ export default function Contact() {
               <strong>Company Registration:</strong> 2024/162392/07
             </p>
             <p className="text-gray-600">
-              ACL Projects (Pty) Ltd is a 100% B-BBEE compliant, woman-owned electrical engineering company committed to delivering excellence across all our services.
+              ACL Projects (Pty) Ltd is a 100% B-BBEE compliant, committed to delivering excellence across all our services.
             </p>
           </div>
         </div>
