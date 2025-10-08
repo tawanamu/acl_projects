@@ -1,10 +1,53 @@
 import { Zap, Users, Award, TrendingUp, ArrowRight } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 interface HomeProps {
   onNavigate: (page: string) => void;
 }
 
 export default function Home({ onNavigate }: HomeProps) {
+  const slides = [
+    {
+      title: 'Power Electronics',
+      description: 'Advanced VSD, UPS, and controller solutions for industrial reliability',
+      image: 'https://images.pexels.com/photos/257700/pexels-photo-257700.jpeg?auto=compress&cs=tinysrgb&w=1600',
+      cta: { label: 'Explore Power Electronics', page: 'services' },
+    },
+    {
+      title: 'Electrical Services',
+      description: 'Installation, commissioning, maintenance — MV/LV, MCC panels, protection',
+      image: 'https://ik.imagekit.io/eeyzqy1tn/ACL%20Projects/Images/american-public-power-association-VuR4oHZ3ucc-unsplash.jpg?updatedAt=1759711298304',
+      cta: { label: 'See Electrical Services', page: 'services' },
+    },
+    {
+      title: 'Project Management',
+      description: 'End-to-end project delivery with documentation and zero-downtime focus',
+      image: 'https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=1600',
+      cta: { label: 'Project Services', page: 'services' },
+    },
+  ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const id = setInterval(() => {
+      setCurrentSlide((s) => (s + 1) % slides.length);
+    }, 3000);
+    return () => clearInterval(id);
+  }, [isPaused, slides.length]);
+
+  const goTo = (idx: number) => setCurrentSlide(idx % slides.length);
+  const next = () => setCurrentSlide((s) => (s + 1) % slides.length);
+  const prev = () => setCurrentSlide((s) => (s - 1 + slides.length) % slides.length);
+
+  // Scroll animations
+  const [highlightsRef, isHighlightsVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [aboutRef, isAboutVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [clientsRef, isClientsVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [ctaRef, isCtaVisible] = useScrollAnimation({ threshold: 0.2 });
   const highlights = [
     {
       icon: <Zap className="w-8 h-8" />,
@@ -34,12 +77,21 @@ export default function Home({ onNavigate }: HomeProps) {
 
   return (
     <div className="bg-white">
-      <section className="relative overflow-hidden text-white bg-gradient-to-br from-green-500 via-blue-500 to-purple-600">
-        <div
-          className="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-200"
-          style={{ backgroundImage: 'url("https://ik.imagekit.io/eeyzqy1tn/ACL%20Projects/Images/american-public-power-association-VuR4oHZ3ucc-unsplash.jpg?updatedAt=1759711298304")' }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-green-500/50 via-blue-500/50 to-purple-600/50"></div>
+      <section 
+        className="relative overflow-hidden text-white bg-gradient-to-br from-green-500 via-blue-500 to-purple-600"
+      >
+        {/* Slides background stack */}
+        <div className="absolute inset-0">
+          {slides.map((slide, idx) => (
+            <div
+              key={idx}
+              className={`absolute inset-0 bg-center bg-no-repeat bg-cover transition-all duration-700 ease-in-out ${idx === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'}`}
+              style={{ backgroundImage: `url("${slide.image}")` }}
+              aria-hidden={idx !== currentSlide}
+            ></div>
+          ))}
+          <div className="absolute inset-0 bg-gradient-to-br from-green-500/50 via-blue-500/50 to-purple-600/50"></div>
+        </div>
 
         <div className="relative px-4 py-24 mx-auto max-w-7xl sm:px-6 lg:px-8 md:py-32">
           <div className="text-center">
@@ -53,17 +105,17 @@ export default function Home({ onNavigate }: HomeProps) {
               </div>
             </div>
             <h1 className="mb-6 text-4xl font-bold md:text-6xl">
-              Empowering Industries,<br />Enhancing Lives
+              {slides[currentSlide].title}
             </h1>
             <p className="max-w-3xl mx-auto mb-8 text-lg md:text-xl text-blue-50">
-              Premier electrical engineering, construction, and instrumentation services with exceptional project management
+              {slides[currentSlide].description}
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <button
-                onClick={() => onNavigate('services')}
+                onClick={() => onNavigate(slides[currentSlide].cta.page)}
                 className="flex items-center justify-center gap-2 px-8 py-3 font-semibold text-blue-600 transition-all transform bg-white rounded-lg shadow-lg hover:bg-blue-50 hover:scale-105"
               >
-                Our Services
+                {slides[currentSlide].cta.label}
                 <ArrowRight size={20} />
               </button>
               <button
@@ -76,18 +128,49 @@ export default function Home({ onNavigate }: HomeProps) {
             <p className="mt-8 text-lg font-semibold tracking-wide text-yellow-300">
               SUCCESS IS CONSTANCY OF PURPOSE
             </p>
+
+            {/* Carousel controls */}
+            <div className="flex items-center justify-center gap-3 mt-10">
+              <button
+                aria-label="Previous slide"
+                onClick={prev}
+                className="px-3 py-1 text-sm font-semibold border rounded text-white/90 border-white/30 hover:bg-white/10"
+              >
+                Prev
+              </button>
+              <div className="flex items-center gap-2">
+                {slides.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => goTo(i)}
+                    aria-label={`Go to slide ${i + 1}`}
+                    className={`w-2.5 h-2.5 rounded-full transition-all ${i === currentSlide ? 'bg-white w-6' : 'bg-white/50'}`}
+                  ></button>
+                ))}
+              </div>
+              <button
+                aria-label="Next slide"
+                onClick={next}
+                className="px-3 py-1 text-sm font-semibold border rounded text-white/90 border-white/30 hover:bg-white/10"
+              >
+                Next
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-gray-50">
+      <section 
+        ref={highlightsRef}
+        className={`py-16 bg-gray-50 scroll-fade-in ${isHighlightsVisible ? 'visible' : ''}`}
+      >
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {highlights.map((item, index) => (
-              <div
-                key={index}
-                className="p-6 transition-all transform bg-white shadow-lg rounded-xl hover:shadow-xl hover:-translate-y-1"
-              >
+                <div
+                  key={index}
+                  className={`p-6 transition-all transform bg-white shadow-lg rounded-xl hover:shadow-xl hover:-translate-y-1 scroll-scale-in scroll-delay-${(index + 1) * 100} ${isHighlightsVisible ? 'visible' : ''}`}
+                >
                 <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${item.color} flex items-center justify-center text-white mb-4`}>
                   {item.icon}
                 </div>
@@ -99,7 +182,10 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </section>
 
-      <section className="py-20">
+      <section 
+        ref={aboutRef}
+        className={`py-20 scroll-fade-in ${isAboutVisible ? 'visible' : ''}`}
+      >
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
             <div>
@@ -134,7 +220,7 @@ export default function Home({ onNavigate }: HomeProps) {
                 <ArrowRight size={20} />
               </button>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className={`grid grid-cols-2 gap-4 scroll-fade-right ${isAboutVisible ? 'visible' : ''}`}>
               <div className="relative p-6 overflow-hidden text-white bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl">
                 <div
                   className="absolute inset-0 bg-center bg-cover opacity-30"
@@ -184,7 +270,10 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </section>
 
-      <section className="py-20 text-white bg-gradient-to-r from-blue-600 to-purple-600">
+      <section 
+        ref={clientsRef}
+        className={`py-20 text-white bg-gradient-to-r from-blue-600 to-purple-600 scroll-fade-in ${isClientsVisible ? 'visible' : ''}`}
+      >
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="mb-6 text-3xl font-bold md:text-4xl">Our Trusted Clients</h2>
@@ -217,7 +306,10 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section 
+        ref={ctaRef}
+        className={`py-20 bg-gray-50 scroll-fade-in ${isCtaVisible ? 'visible' : ''}`}
+      >
         <div className="px-4 mx-auto text-center max-w-7xl sm:px-6 lg:px-8">
           <h2 className="mb-6 text-3xl font-bold text-gray-800 md:text-4xl">
             Ready to Start Your Project?

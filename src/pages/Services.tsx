@@ -1,6 +1,13 @@
-import { Cpu, Zap, Wrench, Settings, Gauge, Battery, Cable, Shield, CheckCircle, ClipboardList } from 'lucide-react';
+import { Cpu, Zap, Wrench, Shield, CheckCircle, ClipboardList } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export default function Services() {
+  const [heroRef, isHeroVisible] = useScrollAnimation({ threshold: 0.3 });
+  const [servicesRef, isServicesVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [expertiseRef, isExpertiseVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [whyChooseRef, isWhyChooseVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [ctaRef, isCtaVisible] = useScrollAnimation({ threshold: 0.2 });
+
   const services = [
     {
       icon: <Cpu className="w-8 h-8" />,
@@ -75,7 +82,10 @@ export default function Services() {
 
   return (
     <div className="bg-white">
-      <section className="relative py-20 overflow-hidden text-white bg-gradient-to-br from-green-600 via-blue-600 to-purple-600">
+      <section 
+        ref={heroRef}
+        className={`relative py-20 overflow-hidden text-white bg-gradient-to-br from-green-600 via-blue-600 to-purple-600 scroll-fade-in ${isHeroVisible ? 'visible' : 'scroll-initial-visible'}`}
+      >
         <div
           className="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-80"
           style={{ backgroundImage: 'url("https://ik.imagekit.io/eeyzqy1tn/ACL%20Projects/Images/emmanuel-ikwuegbu-_2AlIm-F6pw-unsplash.jpg?updatedAt=1759711297380")' }}
@@ -91,7 +101,10 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section 
+        ref={servicesRef}
+        className={`py-20 scroll-fade-in ${isServicesVisible ? 'visible' : ''}`}
+      >
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold text-gray-800 md:text-4xl">What We Offer</h2>
@@ -102,7 +115,10 @@ export default function Services() {
 
           <div className="space-y-12">
             {services.map((service, index) => (
-              <div key={index} className="overflow-hidden bg-white shadow-xl rounded-2xl">
+              <div 
+                key={index} 
+                className={`overflow-hidden bg-white shadow-xl rounded-2xl scroll-scale-in ${index % 2 === 0 ? 'scroll-fade-left' : 'scroll-fade-right'} scroll-delay-${(index + 1) * 200} ${isServicesVisible ? 'visible' : ''}`}
+              >
                 <div className={`relative bg-gradient-to-r ${service.color} p-8 text-white overflow-hidden`}>
                   <div
                     className="absolute inset-0 bg-center bg-cover opacity-100"
@@ -140,7 +156,10 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section 
+        ref={expertiseRef}
+        className={`py-20 bg-gray-50 scroll-fade-in ${isExpertiseVisible ? 'visible' : ''}`}
+      >
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold text-gray-800 md:text-4xl">Our Expertise</h2>
@@ -154,28 +173,31 @@ export default function Services() {
               {expertise.map((item, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-start p-6 transition-all transform bg-white shadow-lg rounded-xl hover:shadow-xl hover:-translate-y-1"
+                  className={`flex flex-col items-start p-6 transition-all transform bg-white shadow-lg rounded-xl scroll-hover scroll-scale-in scroll-delay-${(index + 1) * 100} ${isExpertiseVisible ? 'visible' : ''}`}
                 >
                   <h3 className="text-xl font-bold text-gray-800">{item.title}</h3>
                 </div>
               ))}
             </div>
             {/* Image Side */}
-            <div className="flex justify-center">
+            <div className={`flex justify-center scroll-fade-right ${isExpertiseVisible ? 'visible' : ''}`}>
               <img
                 src="https://ik.imagekit.io/eeyzqy1tn/ACL%20Projects/Images/emmanuel-ikwuegbu-_2AlIm-F6pw-unsplash.jpg?updatedAt=1759711297380"
                 alt="Expertise"
-                className="object-cover w-full max-w-2xl shadow-xl rounded-2xl"
+                className="object-cover w-full max-w-2xl shadow-xl rounded-2xl scroll-hover"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 text-white bg-gradient-to-r from-blue-600 to-green-600">
+      <section 
+        ref={whyChooseRef}
+        className={`py-20 text-white bg-gradient-to-r from-blue-600 to-green-600 scroll-fade-in ${isWhyChooseVisible ? 'visible' : ''}`}
+      >
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
-            <div>
+            <div className={`scroll-fade-left ${isWhyChooseVisible ? 'visible' : ''}`}>
               <h2 className="mb-6 text-3xl font-bold md:text-4xl">Why Choose ACL Projects?</h2>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -208,7 +230,7 @@ export default function Services() {
                 </div>
               </div>
             </div>
-            <div className="p-8 bg-white/10 backdrop-blur-sm rounded-2xl">
+            <div className={`p-8 bg-white/10 backdrop-blur-sm rounded-2xl scroll-fade-right ${isWhyChooseVisible ? 'visible' : ''}`}>
               <h3 className="mb-6 text-2xl font-bold">Industries We Serve</h3>
               <div className="space-y-3">
                 {['Mining', 'Manufacturing', 'Infrastructure', 'Energy', 'Heavy Industry', 'Industrial Facilities'].map((industry, index) => (
@@ -223,9 +245,12 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section 
+        ref={ctaRef}
+        className={`py-20 scroll-fade-in ${isCtaVisible ? 'visible' : ''}`}
+      >
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="p-12 text-center text-white shadow-2xl bg-gradient-to-br from-orange-500 to-red-600 rounded-3xl">
+          <div className="p-12 text-center text-white shadow-2xl bg-gradient-to-br from-orange-500 to-red-600 rounded-3xl scroll-scale">
             <h2 className="mb-6 text-3xl font-bold md:text-4xl">Ready to Get Started?</h2>
             <p className="max-w-3xl mx-auto mb-8 text-xl text-orange-100">
               Let's discuss how we can help power your next project with our comprehensive electrical engineering and instrumentation services

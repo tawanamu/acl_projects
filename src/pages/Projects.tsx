@@ -1,6 +1,12 @@
 import { Briefcase, CheckCircle, MapPin, Calendar, Users, Target } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export default function Projects() {
+  const [heroRef, isHeroVisible] = useScrollAnimation({ threshold: 0.3 });
+  const [projectsRef, isProjectsVisible] = useScrollAnimation({ threshold: 0.1 });
+  const [commitmentRef, isCommitmentVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [ctaRef, isCtaVisible] = useScrollAnimation({ threshold: 0.2 });
+
   const projects = [
     {
       title: 'Industrial Automation System Upgrade',
@@ -96,7 +102,10 @@ export default function Projects() {
 
   return (
     <div className="bg-white">
-      <section className="relative py-20 overflow-hidden text-white bg-gradient-to-br from-green-600 via-blue-600 to-purple-600">
+      <section 
+        ref={heroRef}
+        className={`relative py-20 overflow-hidden text-white bg-gradient-to-br from-green-600 via-blue-600 to-purple-600 scroll-fade-in ${isHeroVisible ? 'visible' : 'scroll-initial-visible'}`}
+      >
         <div
           className="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-80"
           style={{ backgroundImage: 'url("https://ik.imagekit.io/eeyzqy1tn/ACL%20Projects/Images/ehmitrich-fW6lwDM26o0-unsplash.jpg?updatedAt=1759711298389")' }}
@@ -112,7 +121,10 @@ export default function Projects() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section 
+        ref={projectsRef}
+        className={`py-20 scroll-fade-in ${isProjectsVisible ? 'visible' : ''}`}
+      >
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold text-gray-800 md:text-4xl">Featured Projects</h2>
@@ -125,7 +137,7 @@ export default function Projects() {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="overflow-hidden transition-shadow bg-white shadow-xl rounded-2xl hover:shadow-2xl"
+                className={`overflow-hidden transition-shadow bg-white shadow-xl rounded-2xl scroll-hover scroll-fade-in scroll-delay-${(index + 1) * 200} ${isProjectsVisible ? 'visible' : ''}`}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2">
                   <div className="relative h-64 overflow-hidden lg:h-auto">
@@ -179,7 +191,10 @@ export default function Projects() {
         </div>
       </section>
 
-      <section className="py-20 text-white bg-gradient-to-r from-blue-600 to-green-600">
+      <section 
+        ref={commitmentRef}
+        className={`py-20 text-white bg-gradient-to-r from-blue-600 to-green-600 scroll-fade-in ${isCommitmentVisible ? 'visible' : ''}`}
+      >
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="mb-6 text-3xl font-bold md:text-4xl">Our Commitment to Excellence</h2>
@@ -187,18 +202,19 @@ export default function Projects() {
               Every project we undertake reflects our dedication to quality, safety, and client satisfaction. With our experienced team and comprehensive approach, we deliver results that exceed expectations.
             </p>
             <div className="grid grid-cols-1 gap-8 mt-12 md:grid-cols-3">
-              <div className="p-6 bg-white/10 backdrop-blur-sm rounded-xl">
-                <h3 className="mb-2 text-2xl font-bold">Quality First</h3>
-                <p className="text-blue-100">Highest standards in every aspect of our work</p>
-              </div>
-              <div className="p-6 bg-white/10 backdrop-blur-sm rounded-xl">
-                <h3 className="mb-2 text-2xl font-bold">On Time, On Budget</h3>
-                <p className="text-blue-100">Reliable delivery that respects your timeline and budget</p>
-              </div>
-              <div className="p-6 bg-white/10 backdrop-blur-sm rounded-xl">
-                <h3 className="mb-2 text-2xl font-bold">Safety Excellence</h3>
-                <p className="text-blue-100">Zero-incident safety record across all projects</p>
-              </div>
+              {[
+                { title: "Quality First", description: "Highest standards in every aspect of our work" },
+                { title: "On Time, On Budget", description: "Reliable delivery that respects your timeline and budget" },
+                { title: "Safety Excellence", description: "Zero-incident safety record across all projects" }
+              ].map((item, index) => (
+                <div 
+                  key={index}
+                  className={`p-6 bg-white/10 backdrop-blur-sm rounded-xl scroll-scale-in scroll-delay-${(index + 1) * 200} ${isCommitmentVisible ? 'visible' : ''}`}
+                >
+                  <h3 className="mb-2 text-2xl font-bold">{item.title}</h3>
+                  <p className="text-blue-100">{item.description}</p>
+                </div>
+              ))}
             </div>
             <div className="mt-12">
               <p className="text-2xl font-bold text-yellow-300">
@@ -209,7 +225,10 @@ export default function Projects() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section 
+        ref={ctaRef}
+        className={`py-20 bg-gray-50 scroll-fade-in ${isCtaVisible ? 'visible' : ''}`}
+      >
         <div className="max-w-4xl px-4 mx-auto text-center sm:px-6 lg:px-8">
           <h2 className="mb-6 text-3xl font-bold text-gray-800 md:text-4xl">
             Ready to Start Your Project?
