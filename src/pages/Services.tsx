@@ -26,7 +26,7 @@ export default function Services() {
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: 'Electrical Services',
+      title: 'Electrical & Instrumentation Services',
       color: 'from-green-500 to-green-150',
       items: [
         'Electrical Installation & Maintenance (MCC Panels)',
@@ -40,6 +40,7 @@ export default function Services() {
         'Plant maintenance',
         'Labour supply',
         'VSD installation and repair',
+        'Maintenance,calibration, process automation, and commissioning of various E&I components.',
       ],
     },
     {

@@ -15,8 +15,8 @@ export default function Home({ onNavigate }: HomeProps) {
       cta: { label: 'Explore Power Electronics', page: 'services' },
     },
     {
-      title: 'Electrical Services',
-      description: 'Installation, commissioning, maintenance — MV/LV, MCC panels, protection',
+      title: 'Electrical & Instrumentation Services',
+      description: 'Maintenance,calibration, process automation, and commissioning of various E&I components.',
       image: 'https://ik.imagekit.io/eeyzqy1tn/ACL%20Projects/Images/american-public-power-association-VuR4oHZ3ucc-unsplash.jpg?updatedAt=1759711298304',
       cta: { label: 'See Electrical Services', page: 'services' },
     },
