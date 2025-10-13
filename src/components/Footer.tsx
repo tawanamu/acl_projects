@@ -57,28 +57,28 @@ export default function Footer() {
             <h4 className="mb-4 text-lg font-semibold text-purple-400">Follow Us</h4>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://web.facebook.com/profile.php?id=61567131538415"
                 className="flex items-center justify-center w-10 h-10 transition-colors bg-gray-800 rounded-full hover:bg-blue-600"
                 aria-label="Facebook"
               >
                 <Facebook size={20} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/aclprojects1/#"
                 className="flex items-center justify-center w-10 h-10 transition-colors bg-gray-800 rounded-full hover:bg-pink-600"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/acl-projects-pty-ltd/"
                 className="flex items-center justify-center w-10 h-10 transition-colors bg-gray-800 rounded-full hover:bg-blue-700"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
               </a>
               <a
-                href="#"
+                href="https://x.com/AclPty94864"
                 className="flex items-center justify-center w-10 h-10 transition-colors bg-gray-800 rounded-full hover:bg-blue-400"
                 aria-label="Twitter"
               >

@@ -10,9 +10,6 @@ export default function Projects() {
   const projects = [
     {
       title: 'Industrial Automation System Upgrade',
-      client: 'Southex',
-      location: 'Richards Bay',
-      date: '2024',
       category: 'Power Electronics',
       image: 'https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=800',
       description: 'Complete overhaul of industrial automation systems including VSD installations, PLC programming, and control system optimization.',
@@ -25,9 +22,6 @@ export default function Projects() {
     },
     {
       title: 'Municipal Electrical Infrastructure',
-      client: 'King Cetshwayo District',
-      location: 'KwaZulu-Natal',
-      date: '2023-2024',
       category: 'Electrical Services',
       image: 'https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=800',
       description: 'Comprehensive electrical infrastructure development including MV/LV installations, power distribution, and street lighting systems.',
@@ -40,9 +34,6 @@ export default function Projects() {
     },
     {
       title: 'Industrial Park Development',
-      client: 'RBIDZ',
-      location: 'Richards Bay',
-      date: '2023',
       category: 'Project Management',
       image: 'https://images.pexels.com/photos/236705/pexels-photo-236705.jpeg?auto=compress&cs=tinysrgb&w=800',
       description: 'End-to-end project management for electrical and instrumentation installation in new industrial development zone.',
@@ -55,9 +46,6 @@ export default function Projects() {
     },
     {
       title: 'UPS System Installation & Maintenance',
-      client: 'Nini Butt Business',
-      location: 'Richards Bay',
-      date: '2024',
       category: 'Power Electronics',
       image: 'https://images.pexels.com/photos/442152/pexels-photo-442152.jpeg?auto=compress&cs=tinysrgb&w=800',
       description: 'Design, installation, and ongoing maintenance of uninterrupted power supply systems for critical business operations.',
@@ -70,9 +58,6 @@ export default function Projects() {
     },
     {
       title: 'Mining Facility Electrical Upgrade',
-      client: 'Confidential Mining Client',
-      location: 'KwaZulu-Natal',
-      date: '2023',
       category: 'Electrical Services',
       image: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=800',
       description: 'Major electrical system upgrade for mining operations including power distribution, motor control centers, and safety systems.',
@@ -85,9 +70,6 @@ export default function Projects() {
     },
     {
       title: 'Solar Power Integration Project',
-      client: 'Industrial Client',
-      location: 'Richards Bay',
-      date: '2024',
       category: 'Energy Solutions',
       image: 'https://images.pexels.com/photos/159397/solar-panel-array-power-sun-electricity-159397.jpeg?auto=compress&cs=tinysrgb&w=800',
       description: 'Integration of solar power systems with existing electrical infrastructure for sustainable energy solutions.',
@@ -156,18 +138,6 @@ export default function Projects() {
                     <h3 className="mb-4 text-2xl font-bold text-gray-800 md:text-3xl">{project.title}</h3>
 
                     <div className="flex flex-wrap gap-4 mb-4 text-gray-600">
-                      <div className="flex items-center gap-2">
-                        <Users className="w-4 h-4 text-blue-500" />
-                        <span className="text-sm">{project.client}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <MapPin className="w-4 h-4 text-green-500" />
-                        <span className="text-sm">{project.location}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Calendar className="w-4 h-4 text-orange-500" />
-                        <span className="text-sm">{project.date}</span>
-                      </div>
                     </div>
 
                     <p className="mb-6 leading-relaxed text-gray-700">{project.description}</p>

@@ -35,7 +35,7 @@ export default function Home({ onNavigate }: HomeProps) {
     if (isPaused) return;
     const id = setInterval(() => {
       setCurrentSlide((s) => (s + 1) % slides.length);
-    }, 3000);
+    }, 5000);
     return () => clearInterval(id);
   }, [isPaused, slides.length]);
 
@@ -276,7 +276,7 @@ export default function Home({ onNavigate }: HomeProps) {
       >
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="mb-6 text-3xl font-bold md:text-4xl">Our Trusted Clients</h2>
+            <h2 className="mb-6 text-3xl font-bold md:text-4xl">Some of Our Clients</h2>
             <p className="max-w-2xl mx-auto mb-12 text-lg text-blue-100">
               We're proud to work with leading organizations across South Africa
             </p>
@@ -301,6 +301,7 @@ export default function Home({ onNavigate }: HomeProps) {
                 alt="Nini Butt Business"
                 className="object-contain h-20 mx-auto rounded"
               />
+              
             </div>
           </div>
         </div>
