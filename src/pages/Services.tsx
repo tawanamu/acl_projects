@@ -154,16 +154,6 @@ export default function Services() {
               </div>
             ))}
           </div>
-
-          {/* See Projects Button */}
-          <div className="mt-12 text-center">
-            <a
-              href="/Projects"
-              className="inline-block px-8 py-4 text-lg font-semibold text-white transition bg-blue-600 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
-            >
-              See Projects
-            </a>
-          </div>
         </div>
       </section>
 
