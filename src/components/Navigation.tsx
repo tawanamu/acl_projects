@@ -26,7 +26,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
               <img
                 src="https://ik.imagekit.io/eeyzqy1tn/ACL%20Projects/Logo%20&%20Branding/logo.png?updatedAt=1759706592622"
                 alt="ACL Projects Logo"
-                className="object-contain w-12 h-12 rounded-full"
+                className="object-contain w-20 h-20 rounded-full"
               />
               <div>
                 <h1 className="text-2xl font-bold text-gray-800">ACL Projects</h1>

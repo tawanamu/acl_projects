@@ -31,8 +31,8 @@ export default function Footer() {
               <div className="flex items-start space-x-3">
                 <MapPin size={18} className="flex-shrink-0 mt-1 text-green-400" />
                 <p className="text-sm text-gray-300">
-                  No. 31, Unit 22, Alumina Allee,<br />
-                  Alton, Richards Bay, 3900
+                  Mzingazi Ward 6, KwaMbonambi 3915,<br />
+                  Workshop Alumina Allee, Alton.
                 </p>
               </div>
               <div className="flex items-center space-x-3">
@@ -48,6 +48,18 @@ export default function Footer() {
                 <div className="text-sm text-gray-300">
                   <p>info@aclp.co.za</p>
                   <p>aclnrb@gmail.com</p>
+                </div>
+              </div>
+              {/* Business Hours Section */}
+              <div className="flex items-start mt-4 space-x-3">
+                <svg className="flex-shrink-0 w-5 h-5 mt-1 text-yellow-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
+                </svg>
+                <div className="text-sm text-gray-300">
+                  <p className="font-semibold text-yellow-300">Business Hours</p>
+                  <p>Mon – Thurs: 07:00 to 16:00</p>
+                  <p>Friday: 07:00 to 14:00</p>
                 </div>
               </div>
             </div>

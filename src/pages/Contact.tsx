@@ -45,7 +45,7 @@ export default function Contact() {
                   {
                     icon: <MapPin className="w-6 h-6 text-white" />,
                     title: "Our Location",
-                    content: "No. 31, Unit 22, Alumina Allee<br />Alton, Richards Bay, 3900<br />South Africa",
+                    content: "Mzingazi Ward 6, KwaMbonambi 3915,<br />Workshop Alumina Allee, Alton.",
                     gradient: "from-blue-50 to-green-50",
                     iconGradient: "from-blue-500 to-green-500"
                   },
@@ -132,28 +132,28 @@ export default function Contact() {
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   <a
-                    href="#"
+                    href="https://web.facebook.com/profile.php?id=61567131538415"
                     className="flex items-center gap-3 p-4 transition-colors rounded-lg bg-blue-50 hover:bg-blue-100 group"
                   >
                     <Facebook className="w-6 h-6 text-blue-600" />
                     <span className="text-gray-700 group-hover:text-blue-600">Facebook</span>
                   </a>
                   <a
-                    href="#"
+                    href="https://www.instagram.com/aclprojects1/#"
                     className="flex items-center gap-3 p-4 transition-colors rounded-lg bg-pink-50 hover:bg-pink-100 group"
                   >
                     <Instagram className="w-6 h-6 text-pink-600" />
                     <span className="text-gray-700 group-hover:text-pink-600">Instagram</span>
                   </a>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/company/acl-projects-pty-ltd/"
                     className="flex items-center gap-3 p-4 transition-colors rounded-lg bg-blue-50 hover:bg-blue-100 group"
                   >
                     <Linkedin className="w-6 h-6 text-blue-700" />
                     <span className="text-gray-700 group-hover:text-blue-700">LinkedIn</span>
                   </a>
                   <a
-                    href="#"
+                    href="https://x.com/AclPty94864"
                     className="flex items-center gap-3 p-4 transition-colors rounded-lg bg-blue-50 hover:bg-blue-100 group"
                   >
                     <Twitter className="w-6 h-6 text-blue-500" />
@@ -174,7 +174,7 @@ export default function Contact() {
           <div className="overflow-hidden bg-white shadow-xl rounded-2xl scroll-scale">
             <div className="bg-gray-200 aspect-w-16 aspect-h-9">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3529.8123456789!2d32.0378!3d-28.7833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDQ2JzU5LjkiUyAzMsKwMDInMTYuMSJF!5e0!3m2!1sen!2sza!4v1234567890"
+                src="https://www.google.com/maps?q=-28.7484089,32.1386451&hl=en&z=17&output=embed"
                 width="100%"
                 height="450"
                 style={{ border: 0 }}
