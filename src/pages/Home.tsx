@@ -280,7 +280,7 @@ export default function Home({ onNavigate }: HomeProps) {
             <p className="max-w-2xl mx-auto mb-12 text-lg text-blue-100">
               We're proud to work with leading organizations across South Africa
             </p>
-            <div className="grid items-center grid-cols-2 gap-8 md:grid-cols-4">
+            <div className="grid items-center grid-cols-2 gap-8 md:grid-cols-5">
               <img
                 src="https://ik.imagekit.io/eeyzqy1tn/ACL%20Projects/Client%20Logos/South32_logo.svg.png?updatedAt=1759617763190"
                 alt="Southex"
@@ -301,7 +301,11 @@ export default function Home({ onNavigate }: HomeProps) {
                 alt="Nini Butt Business"
                 className="object-contain h-20 mx-auto rounded"
               />
-              
+              <img
+                src="https://ik.imagekit.io/eeyzqy1tn/ACL%20Projects/Client%20Logos/QCC.png?updatedAt=1760742064773"
+                alt="QCC"
+                className="object-contain h-20 mx-auto"
+              />
             </div>
           </div>
         </div>
