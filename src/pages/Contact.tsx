@@ -69,7 +69,8 @@ export default function Contact() {
                   {
                     icon: <Clock className="w-6 h-6 text-white" />,
                     title: "Business Hours",
-                    content: `Monday - Friday: 8:00 AM - 5:00 PM<br />
+                    content: `Monday - Thursday: 7:00 AM - 4:00 PM<br />
+                              Friday: 7:00 AM - 2:00 PM<br />
                              Saturday: By Appointment<br />
                              Sunday: Closed<br />
                              <span class="mt-2 text-sm font-medium text-blue-600">24/7 Emergency Support Available</span>`,

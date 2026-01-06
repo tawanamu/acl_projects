@@ -302,9 +302,9 @@ export default function Home({ onNavigate }: HomeProps) {
                 className="object-contain h-20 mx-auto rounded"
               />
               <img
-                src="https://ik.imagekit.io/eeyzqy1tn/ACL%20Projects/Client%20Logos/QCC.png?updatedAt=1760742064773"
+                src="https://ik.imagekit.io/eeyzqy1tn/ACL%20Projects/Client%20Logos/QCC.png"
                 alt="QCC"
-                className="object-contain h-20 mx-auto"
+                className="object-contain mx-auto h-21"
               />
             </div>
           </div>
