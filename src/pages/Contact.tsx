@@ -61,7 +61,7 @@ export default function Contact() {
                   {
                     icon: <Mail className="w-6 h-6 text-white" />,
                     title: "Email Addresses",
-                    content: `<a href="mailto:info@aclp.co.za" class="text-blue-600 hover:underline">info@aclp.co.za</a><br />
+                    content: `<a href="mailto:info@aclp.co.za " class="text-blue-600 hover:underline">info@aclp.co.za </a><br />
                              <a href="mailto:aclnrb@gmail.com" class="text-blue-600 hover:underline">aclnrb@gmail.com</a>`,
                     gradient: "from-orange-50 to-red-50",
                     iconGradient: "from-orange-500 to-red-500"
