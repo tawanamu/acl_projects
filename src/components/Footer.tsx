@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Linkedin, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+import logo from '../assets/WhatsApp Image 2026-09-13 at 15.09.08.jpeg';
 
 export default function Footer() {
   return (
@@ -7,24 +8,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div>
             <div className="flex items-center mb-4 space-x-3">
-              <div className="flex items-center justify-center bg-white rounded-full shadow-lg w-14 h-14">
-                <img
-                  src="https://ik.imagekit.io/eeyzqy1tn/ACL%20Projects/Logo%20&%20Branding/logo.png?updatedAt=1759706592622"
-                  alt="ACL Projects Logo"
-                  className="object-contain w-12 h-12 rounded-full"
-                />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold">ACL Projects</h3>
-                <p className="text-sm text-gray-400">Pty Ltd</p>
-              </div>
+              <img
+                src={logo}
+                alt="ACL Projects Logo"
+                className="object-contain w-14 h-14"
+              />
             </div>
             <p className="mb-4 text-sm text-gray-400">
               Empowering industries, enhancing lives through exceptional electrical engineering and instrumentation services.
             </p>
             <p className="text-xs text-gray-500">Reg no.: 2024/162392/07</p>
           </div>
-
           <div>
             <h4 className="mb-4 text-lg font-semibold text-blue-400">Contact Information</h4>
             <div className="space-y-3">
@@ -38,7 +32,6 @@ export default function Footer() {
               <div className="flex items-center space-x-3">
                 <Phone size={18} className="flex-shrink-0 text-orange-400" />
                 <div className="text-sm text-gray-300">
-                  <p>+27 35 760 1023</p>
                   <p>+27 66 555 8555</p>
                   <p>+27 63 100 2929</p>
                 </div>

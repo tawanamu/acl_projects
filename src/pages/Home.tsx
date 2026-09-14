@@ -1,6 +1,7 @@
 import { Zap, Users, Award, TrendingUp, ArrowRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import logo from '../assets/WhatsApp Image 2026-09-13 at 15.09.08.jpeg';
 
 interface HomeProps {
   onNavigate: (page: string) => void;
@@ -96,13 +97,11 @@ export default function Home({ onNavigate }: HomeProps) {
         <div className="relative px-4 py-24 mx-auto max-w-7xl sm:px-6 lg:px-8 md:py-32">
           <div className="text-center">
             <div className="inline-block mb-6">
-              <div className="flex items-center justify-center bg-white rounded-full shadow-2xl w-60 h-60">
-                <img
-                  src="https://ik.imagekit.io/eeyzqy1tn/ACL%20Projects/Logo%20&%20Branding/logo.png?updatedAt=1759706592622"
-                  alt="ACL Projects Logo"
-                  className="object-contain w-40 h-40 "
-                />
-              </div>
+              <img
+                src={logo}
+                alt="ACL Projects Logo"
+                className="object-contain w-60 h-60"
+              />
             </div>
             <h1 className="mb-6 text-4xl font-bold md:text-6xl">
               {slides[currentSlide].title}

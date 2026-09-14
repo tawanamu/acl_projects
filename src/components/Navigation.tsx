@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import logo from '../assets/WhatsApp Image 2026-09-13 at 15.09.08.jpeg';
 
 interface NavigationProps {
   currentPage: string;
@@ -20,19 +21,13 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-md">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           <div className="flex items-center cursor-pointer" onClick={() => onNavigate('home')}>
-            <div className="flex items-center space-x-3">
-              <img
-                src="https://ik.imagekit.io/eeyzqy1tn/ACL%20Projects/Logo%20&%20Branding/logo.png?updatedAt=1759706592622"
-                alt="ACL Projects Logo"
-                className="object-contain w-20 h-20 rounded-full"
-              />
-              <div>
-                <h1 className="text-2xl font-bold text-gray-800">ACL Projects</h1>
-                <p className="text-xs text-gray-600">Pty Ltd</p>
-              </div>
-            </div>
+            <img
+              src={logo}
+              alt="ACL Projects Logo"
+              className="object-contain w-28 h-28"
+            />
           </div>
 
           <div className="hidden space-x-8 md:flex">

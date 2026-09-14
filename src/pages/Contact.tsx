@@ -52,7 +52,7 @@ export default function Contact() {
                   {
                     icon: <Phone className="w-6 h-6 text-white" />,
                     title: "Phone Numbers",
-                    content: `Office: <a href="tel:+27357601023" class="text-blue-600 hover:underline">+27 35 760 1023</a><br />
+                    content: ` 
                              Mobile: <a href="tel:+27665558555" class="text-blue-600 hover:underline">+27 66 555 8555</a><br />
                              Mobile: <a href="tel:+27631002929" class="text-blue-600 hover:underline">+27 63 100 2929</a>`,
                     gradient: "from-green-50 to-blue-50",
